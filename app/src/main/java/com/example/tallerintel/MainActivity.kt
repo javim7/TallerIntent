@@ -12,16 +12,50 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnOpen.setOnClickListener {
+        btnSuma.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("valor","Hola Mundo")
-            intent.putExtra("valor2", "Prueba")
-            intent.putExtra("valor3", "jaja")
+            intent.putExtra("valor","Resultado")
+            intent.putExtra("valor2", "Sumar")
+            //intent.putExtra("valor3", "jaja")
             //startActivity(intent)
             //finish()
 
             startActivityForResult(intent, 1)
         }
+
+        btnResta.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity3::class.java)
+            intent.putExtra("valor","Resultado")
+            intent.putExtra("valor2", "Restar")
+            //intent.putExtra("valor3", "jaja")
+            //startActivity(intent)
+            //finish()
+
+            startActivityForResult(intent, 1)
+        }
+
+        btnMult.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity4::class.java)
+            intent.putExtra("valor","Resultado")
+            intent.putExtra("valor2", "Multiplicar")
+            //intent.putExtra("valor3", "jaja")
+            //startActivity(intent)
+            //finish()
+
+            startActivityForResult(intent, 1)
+        }
+
+        btnDiv.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity5::class.java)
+            intent.putExtra("valor","Resultado")
+            intent.putExtra("valor2", "Dividr")
+            //intent.putExtra("valor3", "jaja")
+            //startActivity(intent)
+            //finish()
+
+            startActivityForResult(intent, 1)
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

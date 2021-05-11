@@ -10,13 +10,13 @@
     tools:context=".MainActivity2">
 
     <EditText
-        android:id="@+id/txtSuma1"
+        android:id="@+id/txtMult1"
         android:layout_width="match_parent"
         android:hint="Valor A"
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/txtSuma2"
+        android:id="@+id/txtMult2"
         android:layout_width="match_parent"
         android:hint="Valor B"
         android:layout_height="wrap_content"/>
@@ -28,7 +28,7 @@
         android:textSize="22sp"/>
 
     <TextView
-        android:id="@+id/txtResultadoSum"
+        android:id="@+id/txtResultadoMult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -41,8 +41,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSumar"
-        android:text="Sumar"/>
+        android:id="@+id/btnMultiplicar"
+        android:text="Multiplicar"/>
 
     <Button
         android:layout_width="match_parent"

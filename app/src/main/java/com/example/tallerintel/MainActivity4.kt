@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.activity_main2.btnRegresar
+import kotlinx.android.synthetic.main.activity_main2.txtTexto
+import kotlinx.android.synthetic.main.activity_main4.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
-class MainActivity2 : AppCompatActivity() {
+class MainActivity4 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main4)
 
         val bundle = intent.extras
 
@@ -32,18 +36,19 @@ class MainActivity2 : AppCompatActivity() {
             Toast.makeText(this,valor3,Toast.LENGTH_SHORT).show()
         }
 
-        btnSumar.setOnClickListener {
+        btnMultiplicar.setOnClickListener {
             try {
-                val Expresion = ExpressionBuilder(txtSuma1.text.toString() + "+" + txtSuma2.text.toString()).build()
+                val Expresion =
+                    ExpressionBuilder(txtMult1.text.toString() + "*" + txtMult2.text.toString()).build()
                 val Resultado = Expresion.evaluate()
                 val resultadoLargo = Resultado.toLong()
-                if(Resultado==resultadoLargo.toDouble())
-                    txtResultadoSum.text = resultadoLargo.toString()
+                if (Resultado == resultadoLargo.toDouble())
+                    txtResultadoMult.text = resultadoLargo.toString()
                 else
-                    txtResultadoSum.text = Resultado.toString()
-            } catch (e:Exception) {
+                    txtResultadoMult.text = Resultado.toString()
+            } catch (e: Exception) {
                 Log.d("Excepcion", "mensaje: " + e.message)
-                txtResultadoSum.text = "Error!"
+                txtResultadoMult.text = "Error!"
                 //txtSuma1.text = ""
             }
 

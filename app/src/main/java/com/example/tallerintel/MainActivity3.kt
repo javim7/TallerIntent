@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.activity_main2.btnRegresar
+import kotlinx.android.synthetic.main.activity_main2.txtTexto
+import kotlinx.android.synthetic.main.activity_main3.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
-class MainActivity2 : AppCompatActivity() {
+class MainActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main3)
 
         val bundle = intent.extras
 
@@ -32,18 +35,18 @@ class MainActivity2 : AppCompatActivity() {
             Toast.makeText(this,valor3,Toast.LENGTH_SHORT).show()
         }
 
-        btnSumar.setOnClickListener {
+        btnRestar.setOnClickListener {
             try {
-                val Expresion = ExpressionBuilder(txtSuma1.text.toString() + "+" + txtSuma2.text.toString()).build()
+                val Expresion = ExpressionBuilder(txtResta1.text.toString() + "-" + txtResta2.text.toString()).build()
                 val Resultado = Expresion.evaluate()
                 val resultadoLargo = Resultado.toLong()
                 if(Resultado==resultadoLargo.toDouble())
-                    txtResultadoSum.text = resultadoLargo.toString()
+                    txtResultadoResta.text = resultadoLargo.toString()
                 else
-                    txtResultadoSum.text = Resultado.toString()
+                    txtResultadoResta.text = Resultado.toString()
             } catch (e:Exception) {
                 Log.d("Excepcion", "mensaje: " + e.message)
-                txtResultadoSum.text = "Error!"
+                txtResultadoResta.text = "Error!"
                 //txtSuma1.text = ""
             }
 
